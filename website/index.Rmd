@@ -1,0 +1,33 @@
+---
+title: "Testing Github actions"
+
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(dplyr)
+library(DT)
+library(lubridate)
+```
+
+```{r include=FALSE}
+data <- Sys.time()
+```
+  
+The website update time: `r format(data, usetz = TRUE)`. 
+
+```{r}
+hh <- read.csv("../data/data.csv") %>% mutate(day = ymd(day)) %>% arrange(rev(day)) 
+
+
+hh %>% datatable(
+  extensions = c("FixedColumns", "FixedHeader"),
+  escape = FALSE,
+  options = list(
+    scrollX = TRUE,
+    paging = FALSE,
+    fixedHeader = TRUE
+  )
+)
+```

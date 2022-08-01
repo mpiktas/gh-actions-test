@@ -1,0 +1,11 @@
+name: "Github Actions test"
+title: "Github Actions test"
+description: |
+  Testing Github Actions
+output_dir: "../docs"
+navbar:
+  right:
+    - text: "Start"
+      href: index.html
+output: distill::distill_article
+exclude: ["raw_data", "tmp"]
