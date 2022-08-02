@@ -1,6 +1,6 @@
 on:
     workflow_dispatch:
-name: download-build
+name: container
 
 jobs:
   render-website:
