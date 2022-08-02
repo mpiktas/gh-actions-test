@@ -12,7 +12,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install additional pacakges
-      - run: |
+        run: |
           Rscript - e "install.packages(c('DT','distill'))"
 
       - name: Download the data
