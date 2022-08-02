@@ -11,9 +11,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Install additional pacakges
-        run: |
-          Rscript - e "install.packages(c('DT','distill'))"
 
       - name: Download the data
         run: |
@@ -21,6 +18,7 @@ jobs:
 
       - name: Render the site
         run: |
+          Rscript - e "install.packages(c('DT','distill'))"
           Rscript -e "rmarkdown::render_site('website')"
 
       - name: Commit Result
