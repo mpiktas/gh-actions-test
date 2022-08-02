@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Download the data
         run: |
@@ -19,12 +19,11 @@ jobs:
       - name: Render the site
         run: |
           R -e "install.packages(c('DT','distill'))"
-          R -e "sessionInfo()"
-          R -e "installed.packages()"
           Rscript -e "rmarkdown::render_site('website')"
 
       - name: Commit Result
         run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add data
