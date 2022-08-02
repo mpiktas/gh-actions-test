@@ -1,0 +1,17 @@
+Package: ghactionstest
+Title: Test Github Actions
+Version: 0.0.1
+Authors: Vaidotas Zemlys-Balevičius <zemlys@gmail.com>
+Description: Test Github Actions for downloading the data, rendering the
+    result and publishing using Github Pages
+License: TRUE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Depends: 
+    dplyr, 
+    lubridate, 
+    distill, 
+    DT, 
+    rmarkdown, 
+    knitr
