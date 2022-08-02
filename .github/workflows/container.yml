@@ -18,7 +18,9 @@ jobs:
 
       - name: Render the site
         run: |
-          Rscript - e "install.packages(c('DT','distill'))"
+          R -e "install.packages(c('DT','distill'))"
+          R -e "sessionInfo()"
+          R -e "installed.packages()"
           Rscript -e "rmarkdown::render_site('website')"
 
       - name: Commit Result
