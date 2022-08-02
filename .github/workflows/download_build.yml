@@ -25,7 +25,7 @@ jobs:
 
       - name: Render the site
         run: |
-          Rscript -e "render_site('website')"
+          Rscript -e "rmarkdown::render_site('website')"
 
       - name: Commit Result
         run: |
