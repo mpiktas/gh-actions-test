@@ -3,7 +3,7 @@ on:
 name: dispatch
 
 jobs:
-  render-website:
+  reusable-worfklows:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
