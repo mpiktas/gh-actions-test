@@ -11,6 +11,11 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Show the current directory
+        run: |
+            ls -la ./
+            ls -la ./.github/workflows/
+
       - name: Call other workflow
         uses: ./.github/workflows/container.yml
 
