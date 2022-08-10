@@ -1,0 +1,16 @@
+on:
+    workflow_dispatch:
+name: dispatch
+
+jobs:
+  render-website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Call other workflow
+        uses: ./.github/workflows/container.yml
+
