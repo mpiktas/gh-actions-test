@@ -17,5 +17,5 @@ jobs:
             ls -la ./.github/workflows/
 
       - name: Call other workflow
-        uses: ./.github/workflows/container.yml
+        uses: ./.github/workflows/container.yml@main
 
