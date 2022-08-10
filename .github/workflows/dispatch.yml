@@ -3,20 +3,6 @@ on:
 name: dispatch
 
 jobs:
-  reusable-worfklows:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
-
-      - name: Show the current directory
-        run: |
-            ls -la ./
-            ls -la ./.github/workflows/
-            cat ./.github/workflows/container.yml
-
-      - name: Call other workflow
-        uses: ./.github/workflows/container.yml@main
+  reusable-workflows:
+    uses: ./.github/workflows/container.yml
 
